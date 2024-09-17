@@ -60,8 +60,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Fluxogram
 
-```
+## Fluxogram
 
+```mermaid
 stateDiagram
     [*] --> Start
     Start --> ChooseCategory: Continue
@@ -73,4 +74,4 @@ stateDiagram
     Traffic --> Start
     Sports --> Start
     Exit --> [*]
-```
+
