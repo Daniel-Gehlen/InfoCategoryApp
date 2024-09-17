@@ -1,0 +1,28 @@
+﻿@page "/category-selector"
+@using InfoCategoryApp.Services 
+@inject CategoryService CategoryService
+
+<PageTitle>Category Selector</PageTitle>
+
+<h1>Category Selector</h1>
+
+<select @bind="selectedCategory">
+    <option value="1">Weather</option>
+    <option value="2">Traffic</option>
+    <option value="3">Sports</option>
+    <option value="4">Exit</option>
+</select>
+
+<button @onclick="ShowMessage">Show Message</button>
+
+<p>@message</p>
+
+@code {
+    private string message = string.Empty;
+    private int selectedCategory = 1;
+
+    private async Task ShowMessage()
+    {
+        message = await CategoryService.GetCategoryMessage(selectedCategory);
+    }
+}
